@@ -1,0 +1,62 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <div class="text-center" align="center">
+    <a class="navbar-brand text-center" href="#">Unidad I - Ejercicio 2 (Productos)</a>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+<form>
+  <div class="row">
+    <div class="col-md-4">
+      <h4>Agregar productos</h4>
+      <br>
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" id="nombre" [(ngModel)]="producto.Nombre" name="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Precio</label>
+        <input type="number" [(ngModel)]="producto.Precio" min="0" step="0.01" id="precio" name="precio" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Existencia</label>
+        <input type="number" min="0" step="1" [(ngModel)]="producto.Existencia" id="existencia" name="existencia" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Fecha de Vencimiento</label>
+        <input type="text" [(ngModel)]="producto.FechaVencimiento" id="fecha_vencimiento" name="fecha_vencimiento" class="form-control">
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-success" (click)="agregar()">Agregar</button>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <h4>Listado de productos agregados</h4>
+      <br>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th><div align="center">Nombre</div></th>
+            <th><div align="center">Precio</div></th>
+            <th><div align="center">Existencia</div></th>
+            <th><div align="center">Vencimiento</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <td>{{producto.Nombre}}</td>
+            <td><div align="right">{{producto.Precio}}</div></td>
+            <td><div align="right">{{producto.Existencia}}</div></td>
+            <td><div align="center">{{producto.FechaVencimiento}}</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</form>
+
+<nav id="pie_pagina" class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+  <p>Estudiante: <strong>Yader Vicente Centeno Matus</strong> - Carnet #: <strong>19-30204-0</strong></p>
+</nav>

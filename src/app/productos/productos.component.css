@@ -1,0 +1,11 @@
+table thead th {
+  font-weight: bold;
+}
+
+table thead tr {
+  background-color: yellowgreen;
+}
+
+#pie_pagina {
+  color: white;
+}
